@@ -164,6 +164,14 @@ a{color:inherit;text-decoration:none}
 .pt-lead{margin-top:26px;color:rgba(251,247,238,.85);max-width:560px}
 .pt .note{color:rgba(251,247,238,.7)}
 
+@media (max-width:859px){
+  .pt .wrap{text-align:center}
+  .pt-big{justify-content:center;margin-top:4px}
+  .pt-big .five{font-size:min(86vw,380px)}
+  .pt-big .bai{font-size:min(18vw,96px)}
+  .pt-lead{margin-left:auto;margin-right:auto}
+}
+
 /* recipe */
 .rc{background:var(--yellow);padding:80px 0}
 .rc .kicker{color:var(--ink)}
@@ -543,15 +551,15 @@ var RECIPES = [
 var CATS = [
   {id:"oseibo",en:"Winter Gift",t:"お歳暮の|スイーツ・グルメ",nav:"お歳暮ギフト",lead:"親戚にも、取引先にも。日持ちして、個包装で分けやすいものを中心に。",link:"https://www.rakuten.ne.jp/gold/patie/c/sweets/",lt:"スイーツギフト特集へ",
    items:["the-003","food-047-b","food-01611","food-01319","ad-sweets-5293","godiva-027","food-01113","sha-038","star_b_003","sha-107","food-01603","food-01235"]},
-  {id:"catalog",en:"Catalog Gift",t:"カタログギフト",nav:"カタログギフト",lead:"コードシーのプレミアムカタログは、コース額よりお求めやすい価格。内祝いのまとめ買いにも。",link:"https://www.rakuten.ne.jp/gold/patie/c/catalog-gift-guide/",lt:"カタログギフトの選び方へ",alt:true,
+  {id:"xmas",en:"Christmas Cake",t:"クリスマスケーキ 2026",nav:"クリスマスケーキ",lead:"12月23日〜25日にお届け。子どもが喜ぶキャラクターから大人の味まで。",link:"https://www.rakuten.co.jp/patie/contents/event/christmas/",lt:"クリスマス特集へ",banner:"images/xmas26_1440.jpg",
+   items:["food-949","food-951","food-01264","food-943"]},
+  {id:"catalog",en:"Catalog Gift",t:"カタログギフト",nav:"カタログギフト",lead:"コードシーのプレミアムカタログは、コース額よりお求めやすい価格。内祝いのまとめ買いにも。",link:"https://www.rakuten.ne.jp/gold/patie/c/catalog-gift-guide/",lt:"カタログギフトの選び方へ",
    items:["catalog-selection_eo","catalog-selection_aoo","catalog-selection_aeo","catalog-selection_boo","cat-red-001","illums_cat_002","cat-tower-sweets-002","cat_wagyu_001"]},
   {id:"box",en:"Catalog Gift Box",t:"カタログギフトBOX",nav:"カタログBOX",lead:"カタログとお菓子や花をひと箱に。開けた瞬間に、まず一つ喜んでもらえます。",link:"https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%82%AE%E3%83%95%E3%83%88BOX/?sf=1&sid=277407",lt:"カタログギフトBOXをすべて見る",banner:"images/catalogbox_1440.jpg",
    items:["code-sset-003","cat-sweets-set-001","code-sw2set-009","code-fset-008"]},
-  {id:"osechi",en:"Osechi 2027",t:"おせち 2027",nav:"おせち",lead:"冷凍で届いて、年末は解凍するだけ。少人数から大家族まで。",link:"https://www.rakuten.co.jp/patie/contents/event/osechi/",lt:"おせち特集へ",banner:"images/osechi27_1440.jpg",alt:true,
+  {id:"osechi",en:"Osechi 2027",t:"おせち 2027",nav:"おせち",lead:"冷凍で届いて、年末は解凍するだけ。少人数から大家族まで。",link:"https://www.rakuten.co.jp/patie/contents/event/osechi/",lt:"おせち特集へ",banner:"images/osechi27_1440.jpg",
    items:["osechi-115","osechi-118","osechi-119","osechi-046"]},
-  {id:"xmas",en:"Christmas Cake",t:"クリスマスケーキ 2026",nav:"クリスマスケーキ",lead:"12月23日〜25日にお届け。子どもが喜ぶキャラクターから大人の味まで。",link:"https://www.rakuten.co.jp/patie/contents/event/christmas/",lt:"クリスマス特集へ",banner:"images/xmas26_1440.jpg",
-   items:["food-949","food-951","food-01264","food-943"]},
-  {id:"tower",en:"tower & Kitchen",t:"tower・|キッチン家電",nav:"tower・家電",lead:"見た目もすっきり、毎日つかう道具たち。年末の模様替えに。",link:"https://search.rakuten.co.jp/search/mall/tower/?sid=277407",lt:"towerをすべて見る",alt:true,
+  {id:"tower",en:"tower & Kitchen",t:"tower・|キッチン家電",nav:"tower・家電",lead:"見た目もすっきり、毎日つかう道具たち。年末の模様替えに。",link:"https://search.rakuten.co.jp/search/mall/tower/?sid=277407",lt:"towerをすべて見る",
    items:["ymj-01169","tower-043","ymj-01422","cat-tower-003","t-fal-350","t-fal-433","goods-01603","goods-01794"]}
 ];
 
@@ -637,14 +645,14 @@ function renderRanking(){
 }
 function renderCats(){
   var nav="", sec="";
-  CATS.forEach(function(c){
+  CATS.forEach(function(c,ci){
     var th=P[c.items[0]];
     nav+='<a href="#cat-'+c.id+'"><img src="'+esc(CAB+th.i)+'" alt="" loading="lazy" width="72" height="72"><span><small>'+esc(c.en)+'</small>'+esc(c.nav||c.t)+'</span></a>';
     var items=c.items.map(function(x){return card(x);}).join("");
     var body = c.banner
       ? '<div class="cat-body"><a class="cat-banner rv" href="'+esc(c.link)+'"><img src="'+esc(c.banner)+'" alt="'+esc(c.t.replace("|",""))+'" loading="lazy" width="1440" height="1440"></a><div class="grid g3">'+items+'</div></div>'
       : '<div class="grid">'+items+'</div>';
-    sec+='<section class="sec'+(c.alt?" alt":"")+'" id="cat-'+c.id+'"><div class="wrap">'+
+    sec+='<section class="sec'+(ci%2?" alt":"")+'" id="cat-'+c.id+'"><div class="wrap">'+
       '<div class="sec-head"><p class="kicker rv">'+esc(c.en)+'</p><h2 class="h2 rv">'+esc(c.t).split("|").join("<br>")+'</h2><p class="lead rv">'+esc(c.lead)+'</p></div>'+
       body+'<a class="more rv" href="'+esc(c.link)+'">'+esc(c.lt)+'</a></div></section>';
   });

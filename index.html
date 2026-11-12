@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>コードシーのブラックフライデー｜黒い金曜日に赤いギフトが当たる</title>
+<title>コードシーのブラックフライデー｜赤いギフトが当たるかも</title>
 <meta name="description" content="コードシーギフトセレクションのブラックフライデー。1回のご注文で税込20,000円以上の方から抽選で3名様にTHE RED 5,000円コースが当たる。店内ポイント5倍。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@ a{color:inherit;text-decoration:none}
 .eyes-say{font-size:14px;font-weight:500;margin-left:12px;padding-bottom:4px;color:var(--paper);letter-spacing:.1em}
 @keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
 .fv-copy{margin-top:36px}
-.fv-catch{font-weight:700;font-size:clamp(32px,8.6vw,54px);line-height:1.42;letter-spacing:.06em}
+.fv-catch{font-weight:700;font-size:min(7.9vw,40px);line-height:1.42;letter-spacing:.06em}
 .fv-catch em{font-style:normal;color:var(--red-on-dark)}
 .fv-lead{margin-top:18px;font-size:16px;color:rgba(251,247,238,.82)}
 .fv-facts{display:flex;margin-top:30px;border-top:1px solid var(--line-dark)}
@@ -102,6 +102,10 @@ a{color:inherit;text-decoration:none}
 .bar.on span{width:var(--w)}
 .bar.r span{background:var(--red);color:#fff}
 .bar.y span{background:var(--yellow);color:var(--ink)}
+.bar.k span{background:var(--ink);color:var(--paper)}
+.bar.c span{background:var(--terracotta);color:#fff;justify-content:center;padding-left:0}
+.tl-grid i.c5{background:rgba(203,77,0,.08)}
+.tl-days .c5 b{color:var(--terracotta)}
 .now{position:absolute;top:-4px;bottom:0;width:0;border-left:2px solid var(--ink);display:none}
 .now::before{content:"いまここ";position:absolute;top:-24px;left:-2px;transform:translateX(-50%);font-size:12px;font-weight:700;background:var(--ink);color:var(--paper);padding:0 6px;line-height:20px;white-space:nowrap}
 .tl-legend{display:grid;gap:14px;margin-top:22px}
@@ -296,11 +300,11 @@ a{color:inherit;text-decoration:none}
       <h1 class="fv-title"><span>BLACK </span><span>FRIDAY</span><span class="y">PRESENT &amp; POINT</span></h1>
     </div>
     <div class="fv-photo">
-      <div class="eyes" aria-hidden="true"><span class="eye"><i></i></span><span class="eye"><i></i></span><span class="eyes-say">当たるかも</span></div>
+      <div class="eyes" aria-hidden="true"><span class="eye"><i></i></span><span class="eye"><i></i></span></div>
       <img src="images/brand-thered.jpg" alt="赤い箱のカタログギフト THE RED" width="1080" height="1080">
     </div>
     <div class="fv-copy">
-      <p class="fv-catch">黒い金曜日に<br><span class="nw"><em>赤いギフト</em>が</span><span class="nw">当たる</span></p>
+      <p class="fv-catch"><span class="nw">ブラックフライデーに</span><br><span class="nw"><em>赤いギフト</em>が</span><span class="nw">当たるかも！</span></p>
       <p class="fv-lead">期間中、1回のご注文金額が総額20,000円以上（税込）お買い上げの方から抽選で3名様に、いま話題のカタログギフト「THE RED」5,000円コースをお贈りします。</p>
     </div>
     <div class="fv-facts">
@@ -316,19 +320,23 @@ a{color:inherit;text-decoration:none}
 <section class="sch" id="schedule">
   <div class="wrap">
     <p class="kicker rv">Schedule</p>
-    <h2 class="h2 rv">2つのおトクが<br>重なる9日間</h2>
+    <h2 class="h2 rv">おトクが重なる<br>9日間カレンダー</h2>
     <div class="tl rv" id="tl">
       <div class="tl-days" id="tlDays"></div>
       <div class="tl-rows">
-        <div class="tl-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="tl-grid" aria-hidden="true" id="tlGrid"></div>
         <div class="bar r" id="barLot"><span>抽選プレゼント</span></div>
-        <div class="bar y" id="barPt"><span>ポイント5倍</span></div>
+        <div class="bar y" id="barPt"><span>店内ポイント5倍</span></div>
+        <div class="bar k" id="barBf"><span>BF買いまわり 最大10倍</span></div>
+        <div class="bar c" id="barCard"><span>4倍</span><span>4倍</span></div>
         <div class="now" id="now"></div>
       </div>
     </div>
     <div class="tl-legend rv">
       <p style="--c:var(--red)"><span><b>抽選でTHE RED 5,000円コース</b>11月17日(火) 0:00〜11月25日(水) 23:59</span></p>
       <p style="--c:var(--yellow)"><span><b>店内ポイント5倍</b>11月19日(木) 20:00〜11月25日(水) 1:59</span></p>
+      <p style="--c:var(--ink)"><span><b>楽天ブラックフライデー 買いまわりで最大10倍</b>11月19日(木) 20:00〜11月25日(水) 1:59</span></p>
+      <p style="--c:var(--terracotta)"><span><b>0と5のつく日は楽天カードで4倍</b>11月20日(金)・11月25日(水) 0:00〜23:59</span></p>
     </div>
   </div>
 </section>
@@ -452,6 +460,9 @@ var LOT_START = new Date("2026-11-17T00:00:00+09:00");
 var LOT_END   = new Date("2026-11-25T23:59:59+09:00");
 var PT_START  = new Date("2026-11-19T20:00:00+09:00");
 var PT_END    = new Date("2026-11-25T01:59:59+09:00");
+var BF_START  = PT_START; /* 楽天ブラックフライデー買いまわり(最大10倍) */
+var BF_END    = PT_END;
+var CARD_DAYS = [20,25]; /* 0と5のつく日(楽天カードで4倍) */
 var CAB = "https://image.rakuten.co.jp/patie/cabinet/";
 var ITEM = "https://item.rakuten.co.jp/patie/";
 
@@ -562,17 +573,24 @@ function renderTimeline(){
   var wd=["日","月","火","水","木","金","土"], h="";
   for(var d=17; d<=25; d++){
     var dt=new Date("2026-11-"+d+"T12:00:00+09:00"), w=dt.getDay();
-    h+='<div class="'+(w===0||w===6?"we":"")+'"><b>'+d+'</b><small>'+wd[w]+'</small></div>';
+    h+='<div class="'+(w===0||w===6?"we ":"")+(CARD_DAYS.indexOf(d)>=0?"c5":"")+'"><b>'+d+'</b><small>'+wd[w]+'</small></div>';
   }
   document.getElementById("tlDays").innerHTML=h;
   var span=LOT_END-LOT_START+1000;
-  function setBar(id,s,e){
-    var el=document.getElementById(id).querySelector("span");
+  function setBar(id,s,e,idx){
+    var el=document.getElementById(id).querySelectorAll("span")[idx||0];
     el.style.setProperty("--s",((s-LOT_START)/span*100)+"%");
     el.style.setProperty("--w",((e-s)/span*100)+"%");
   }
   setBar("barLot",LOT_START,LOT_END);
   setBar("barPt",PT_START,PT_END);
+  setBar("barBf",BF_START,BF_END);
+  CARD_DAYS.forEach(function(d,i){
+    setBar("barCard",new Date("2026-11-"+d+"T00:00:00+09:00"),new Date("2026-11-"+d+"T23:59:59+09:00"),i);
+  });
+  var g="";
+  for(var k=17;k<=25;k++) g+='<i class="'+(CARD_DAYS.indexOf(k)>=0?"c5":"")+'"></i>';
+  document.getElementById("tlGrid").innerHTML=g;
   var now=new Date();
   if(now>=LOT_START && now<=LOT_END){
     var m=document.getElementById("now");

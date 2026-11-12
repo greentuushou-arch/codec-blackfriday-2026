@@ -68,15 +68,15 @@ a{color:inherit;text-decoration:none}
 .fv-catch{font-weight:700;font-size:min(7.9vw,40px);line-height:1.42;letter-spacing:.06em}
 .fv-catch em{font-style:normal;color:var(--red-on-dark)}
 .fv-lead{margin-top:18px;font-size:16px;color:rgba(251,247,238,.82)}
-.fv-facts{display:flex;margin-top:30px;border-top:1px solid var(--line-dark)}
-.fv-facts a{flex:1;padding:18px 0 0;display:block}
+.fv-facts{display:flex;margin-top:26px;border-top:1px solid var(--line-dark)}
+.fv-facts a{flex:1;padding:14px 0 0;display:block}
 .fv-facts a+a{border-left:1px solid var(--line-dark);padding-left:18px}
-.fv-facts small{display:block;font-size:13px;color:rgba(251,247,238,.7);letter-spacing:.1em}
-.fv-facts b{font-family:var(--en);font-weight:600;font-size:52px;line-height:1.1;letter-spacing:0}
-.fv-facts b .u{font-family:var(--jp);font-size:20px;margin-left:4px;font-weight:700}
+.fv-facts small{display:block;font-size:16px;font-weight:700;color:var(--paper);letter-spacing:.1em}
+.fv-facts b{display:block;font-family:var(--en);font-weight:600;font-size:min(27vw,128px);line-height:.92;letter-spacing:-.02em;margin-top:2px}
+.fv-facts b .u{font-family:var(--jp);font-size:min(7.6vw,36px);margin-left:4px;font-weight:700;letter-spacing:.04em}
 .fv-facts .r b{color:var(--red-on-dark)}
 .fv-facts .p b{color:var(--yellow)}
-.fv-facts .en{display:block;font-size:12px;font-family:var(--en);letter-spacing:.2em;margin-top:2px;color:rgba(251,247,238,.6)}
+.fv-facts .en{display:block;font-size:12px;font-family:var(--en);letter-spacing:.2em;margin-top:6px;color:rgba(251,247,238,.6)}
 
 /* marquee */
 .mq{background:var(--yellow);color:var(--ink);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--ink)}
@@ -194,7 +194,8 @@ a{color:inherit;text-decoration:none}
 .card .rk.top{background:var(--red);color:#fff}
 .card .nm{font-size:14px;line-height:1.6;margin-top:10px;font-weight:500}
 .card .crs{font-size:13px;font-weight:700;margin-top:6px}
-.card .pr{font-family:var(--en);font-weight:600;font-size:26px;line-height:1.1;color:var(--price);margin-top:6px;letter-spacing:.01em}
+.card .pr{font-family:var(--en);font-weight:600;font-size:31px;line-height:1.05;color:var(--price);margin-top:6px;letter-spacing:-.03em}
+.card .pr .yen{letter-spacing:0}
 .card .pr .fr{font-family:var(--jp);font-size:13px;font-weight:700;margin-left:2px}
 .card .tags{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;font-size:12px;font-weight:700;line-height:1.5}
 .card .tags .ship{color:var(--terracotta)}
@@ -203,7 +204,7 @@ a{color:inherit;text-decoration:none}
 .rank-grid .card:first-child{grid-column:1/-1;display:grid;grid-template-columns:52% 1fr;gap:18px;align-items:center}
 .rank-grid .card:nth-child(-n+3) .nm{font-size:15px}
 .rank-grid .card:first-child .nm{font-size:16px;margin-top:0}
-.rank-grid .card:first-child .pr{font-size:34px}
+.rank-grid .card:first-child .pr{font-size:40px}
 .rank-grid .card:first-child .rk{font-size:26px;padding:10px 14px 9px}
 
 /* category index */
@@ -268,7 +269,8 @@ a{color:inherit;text-decoration:none}
   .rank-grid .card:nth-child(-n+3){grid-column:span 4}
   .rank-grid .card:first-child{display:flex;gap:0;align-items:stretch}
   .rank-grid .card:nth-child(-n+3) .nm{font-size:16px;margin-top:12px}
-  .rank-grid .card:nth-child(-n+3) .pr{font-size:34px}
+  .rank-grid .card:nth-child(-n+3) .pr{font-size:42px}
+  .card .pr{font-size:34px}
   .rank-grid .card:nth-child(-n+3) .rk{font-size:26px;padding:10px 14px 9px}
   .cx-list{grid-template-columns:repeat(3,1fr)}
   .cx-list a{grid-template-columns:72px 1fr;font-size:17px;padding:18px}
@@ -397,8 +399,8 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker rv">Ranking</p>
-      <h2 class="h2 rv">いまよく選ばれている<br>15のギフト</h2>
-      <p class="meta rv">ショップ内の売れ筋ランキング（11月5日〜11日集計）</p>
+      <h2 class="h2 rv">いまよく<br>選ばれているギフト</h2>
+      <p class="meta rv">ショップ内の売れ筋から（11月5日〜11日集計）</p>
     </div>
     <div class="grid rank-grid" id="rankGrid"></div>
   </div>
@@ -433,7 +435,7 @@ a{color:inherit;text-decoration:none}
     <h3>掲載商品について</h3>
     <ul>
       <li>価格は2026年11月12日時点の税込価格です。最新の価格・在庫は各商品ページでご確認ください。</li>
-      <li>「◯点で抽選対象」は、その商品だけで1回のご注文が税込20,000円以上になる個数の目安です。</li>
+      <li>「◯点購入で抽選対象」は、その商品だけで1回のご注文が税込20,000円以上になる個数の目安です。</li>
     </ul>
     <div class="fn-links">
       <a class="btn lt" href="https://www.rakuten.co.jp/patie/">コードシーのトップへ</a>
@@ -547,9 +549,9 @@ function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&am
 function yen(n){return n.toLocaleString("ja-JP");}
 function urlOf(code){var d=P[code];return d&&d.url?d.url:ITEM+code+"/";}
 function lotTag(d){
-  if(d.p>=GOAL) return '<span class="lt hit">この1点で抽選対象</span>';
+  if(d.p>=GOAL) return '<span class="lt hit">1点購入で抽選対象</span>';
   var n=Math.ceil(GOAL/d.p);
-  return n<=10 ? '<span class="lt">'+n+'点で抽選対象</span>' : "";
+  return n<=10 ? '<span class="lt">'+n+'点購入で抽選対象</span>' : "";
 }
 function card(code,rank){
   var d=P[code]; if(!d) return "";
@@ -616,7 +618,7 @@ function renderRecipes(){
   document.getElementById("recipes").innerHTML=h;
 }
 function renderRanking(){
-  document.getElementById("rankGrid").innerHTML=RANKING.map(function(c,i){return card(c,i+1);}).join("");
+  document.getElementById("rankGrid").innerHTML=RANKING.map(function(c,i){return card(c);}).join("");
 }
 function renderCats(){
   var nav="", sec="";

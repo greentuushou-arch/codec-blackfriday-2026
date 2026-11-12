@@ -207,6 +207,7 @@ a{color:inherit;text-decoration:none}
 /* recipe */
 .rc{background:var(--yellow);padding:80px 0}
 .rc .kicker{color:var(--ink)}
+.rc-title{font-size:min(6vw,46px)}
 .rc-list{display:grid;gap:22px;margin-top:40px}
 .rc-item{background:var(--paper);padding:26px 22px 24px}
 .rc-item header{display:flex;align-items:baseline;gap:14px}
@@ -444,7 +445,7 @@ a{color:inherit;text-decoration:none}
 <section class="rc" id="recipe">
   <div class="wrap">
     <p class="kicker rv">How to 20,000</p>
-    <h2 class="h2 rv">ちょうどいい2万円の<br>つくりかた</h2>
+    <h2 class="h2 rv rc-title"><span class="nw">2万円になる購入例！</span><br><span class="nw">ちょうどいいを見つけましょっ</span></h2>
     <p class="lead rv">お歳暮を何軒か、おせちと手土産を少し。年末に必要なものを1回のご注文にまとめると、抽選の対象になる2万円は意外とすぐ。売れ筋で組んだ4つの例です。</p>
     <div class="rc-list" id="recipes"></div>
     <p class="note rv">※価格は2026年11月12日時点の税込価格です。種類・個数により価格が変わる商品があります。</p>
@@ -678,7 +679,7 @@ function renderRecipes(){
        '<div class="rc-goods">'+g+'</div>'+
        '<div class="rc-sum"><span>合計</span><b>'+yen(sum)+'<span class="yen">円</span></b></div>'+
        '<div class="meter" style="--goal:'+(GOAL/max*100)+'%"><i data-w="'+(sum/max*100)+'%"></i></div>'+
-       '<div class="meter-l"><span>20,000円ライン</span><b>抽選対象</b></div></article>';
+       '<div class="meter-l"><span>'+yen(GOAL)+'円ライン</span><b>抽選対象</b></div></article>';
   });
   document.getElementById("recipes").innerHTML=h;
 }

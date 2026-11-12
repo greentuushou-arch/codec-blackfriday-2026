@@ -150,6 +150,7 @@ a{color:inherit;text-decoration:none}
 }
 @media (min-width:860px){
   .mini,.mini-key,.mini-open{display:none}
+  .cal-lead{max-width:none;white-space:nowrap}
 }
 
 /* lottery */
@@ -311,7 +312,7 @@ a{color:inherit;text-decoration:none}
   .day{padding:16px 6px 10px}
   .day .dn{font-size:42px}
   .chip{font-size:14px;padding:5px 5px 6px}
-  .day .flag{margin:0 -6px 8px}
+  .day .flag{margin:0 -6px 8px;font-size:min(.95vw,12px);letter-spacing:0;white-space:nowrap}
   .cal-head .m{font-size:72px}
   .lot .wrap{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
   .lot-photo{position:sticky;top:24px}
@@ -378,7 +379,7 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <p class="kicker rv">Black Friday Calendar</p>
     <h2 class="h2 rv cal-title">おトクが重なる9日間カレンダー</h2>
-    <p class="lead rv">めくるほどおトクが重なっていく9日間。<b>11月20日(金)</b>は4つのおトクがそろう、いちばんおトクな日です。</p>
+    <p class="lead cal-lead rv">めくるほどおトクが重なっていく9日間。<b>11月20日(金)</b>は4つのおトクがそろう、いちばんおトクな日です。</p>
     <div class="mini rv" id="mini"></div>
     <p class="mini-key"><i style="--c:var(--red)"></i>抽選<i style="--c:var(--yellow)"></i>店内5倍<i style="--c:var(--paper)"></i>BF最大10倍<i style="--c:var(--terracotta)"></i>カード4倍</p>
     <button type="button" class="mini-open" id="calOpen" aria-controls="calPop" aria-expanded="false">日ごとのおトクを見る</button>

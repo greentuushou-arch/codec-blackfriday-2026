@@ -85,33 +85,41 @@ a{color:inherit;text-decoration:none}
 .mq-track span:nth-child(even){font-weight:400}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* schedule */
-.sch{padding:76px 0 70px}
-.tl{margin-top:36px}
-.tl-days{display:grid;grid-template-columns:repeat(9,1fr);border-bottom:1px solid var(--ink)}
-.tl-days div{text-align:center;padding-bottom:8px;line-height:1.15}
-.tl-days b{display:block;font-family:var(--en);font-weight:600;font-size:clamp(20px,5.4vw,34px)}
-.tl-days small{font-size:12px}
-.tl-days .we small{color:var(--terracotta);font-weight:700}
-.tl-rows{position:relative;padding:18px 0 0}
-.tl-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(9,1fr);pointer-events:none}
-.tl-grid i{border-right:1px dashed var(--line)}
-.tl-grid i:last-child{border-right:0}
-.bar{position:relative;height:44px;margin-bottom:14px}
-.bar span{position:absolute;top:0;bottom:0;left:var(--s);width:0;transition:width 1.3s cubic-bezier(.2,.7,.2,1);display:flex;align-items:center;padding-left:12px;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden}
-.bar.on span{width:var(--w)}
-.bar.r span{background:var(--red);color:#fff}
-.bar.y span{background:var(--yellow);color:var(--ink)}
-.bar.k span{background:var(--ink);color:var(--paper)}
-.bar.c span{background:var(--terracotta);color:#fff;justify-content:center;padding-left:0}
-.tl-grid i.c5{background:rgba(203,77,0,.08)}
-.tl-days .c5 b{color:var(--terracotta)}
-.now{position:absolute;top:-4px;bottom:0;width:0;border-left:2px solid var(--ink);display:none}
-.now::before{content:"いまここ";position:absolute;top:-24px;left:-2px;transform:translateX(-50%);font-size:12px;font-weight:700;background:var(--ink);color:var(--paper);padding:0 6px;line-height:20px;white-space:nowrap}
-.tl-legend{display:grid;gap:14px;margin-top:22px}
-.tl-legend p{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;font-size:15px;line-height:1.6}
-.tl-legend p::before{content:"";width:14px;height:14px;margin-top:5px;background:var(--c)}
-.tl-legend b{display:block;font-size:17px}
+/* schedule (calendar) */
+.sch{background:var(--night);color:var(--paper);padding:76px 0 80px}
+.sch .kicker{color:var(--yellow)}
+.sch .lead{color:rgba(251,247,238,.85)}
+.sch .lead b{color:var(--yellow)}
+.cal-head{display:flex;align-items:flex-end;justify-content:space-between;margin-top:36px;padding-bottom:10px;border-bottom:2px solid var(--yellow)}
+.cal-head .m{font-family:var(--en);font-weight:600;font-size:clamp(40px,11vw,64px);line-height:.9;letter-spacing:.02em}
+.cal-head .m small{display:block;font-size:.3em;letter-spacing:.3em;color:var(--yellow);margin-bottom:8px;font-weight:500}
+.cal-head .y{font-family:var(--en);font-weight:500;font-size:14px;letter-spacing:.24em;color:rgba(251,247,238,.7)}
+.cal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.day{position:relative;background:var(--paper);color:var(--ink);padding:16px 8px 10px;display:flex;flex-direction:column}
+.day::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:34px;height:6px;background:radial-gradient(circle,var(--night) 2.4px,transparent 2.6px) 0 0/14px 6px repeat-x}
+.day .dh{display:flex;align-items:baseline;justify-content:space-between;padding:0 2px 6px;border-bottom:1px solid var(--line)}
+.day .dn{font-family:var(--en);font-weight:600;font-size:46px;line-height:.95;letter-spacing:-.02em}
+.day .wd{font-size:13px;font-weight:700}
+.day.we .wd,.day.we .dn{color:var(--terracotta)}
+.chips{display:grid;gap:4px;margin-top:8px}
+.chip{font-weight:700;font-size:15px;line-height:1.2;padding:5px 6px 6px;letter-spacing:.02em}
+.chip small{display:block;font-size:10px;font-weight:500;letter-spacing:.04em;opacity:.9}
+.chip.r{background:var(--red);color:#fff}
+.chip.y{background:var(--yellow);color:var(--ink)}
+.chip.k{background:var(--ink);color:var(--yellow)}
+.chip.c{background:var(--terracotta);color:#fff}
+.day .cnt{margin-top:auto;padding-top:8px;font-size:12px;font-weight:700;text-align:right;color:rgba(33,29,22,.6)}
+.day .cnt b{font-family:var(--en);font-size:18px;color:var(--ink);margin:0 1px}
+.day.best{background:var(--yellow);box-shadow:0 0 0 3px var(--yellow)}
+.day.best .chip.y{background:var(--paper)}
+.day .flag{display:block;margin:0 -8px 8px;background:var(--red);color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.06em;line-height:1.3;padding:4px 2px}
+.day.today{outline:3px solid var(--red-on-dark);outline-offset:3px}
+.day.today .now{position:absolute;right:6px;top:10px;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--red)}
+.day.past{opacity:.45}
+.tl-legend{display:grid;gap:14px;margin-top:34px}
+.tl-legend p{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;font-size:15px;line-height:1.6;color:rgba(251,247,238,.85)}
+.tl-legend p::before{content:"";width:14px;height:14px;margin-top:5px;background:var(--c);outline:1px solid rgba(251,247,238,.25)}
+.tl-legend b{display:block;font-size:17px;color:var(--paper)}
 
 /* lottery */
 .lot{background:var(--paper-deep);padding:80px 0}
@@ -126,6 +134,7 @@ a{color:inherit;text-decoration:none}
 .lot-prize .en{font-family:var(--en);font-weight:600;font-size:15px;letter-spacing:.22em;color:var(--red)}
 .lot-prize h3{font-size:clamp(22px,5.6vw,30px);font-weight:700;line-height:1.5;margin-top:4px}
 .lot-prize p{margin-top:10px}
+.lot-concept{width:100%;aspect-ratio:1/1;margin-top:18px}
 .dl{margin-top:26px}
 .dl div{display:grid;grid-template-columns:5.5em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.6}
 .dl dt{font-weight:700}
@@ -259,6 +268,12 @@ a{color:inherit;text-decoration:none}
   .eye{width:40px;height:48px}
   .eye i{width:20px;height:20px}
   .eyes-say{font-size:25px}
+  .cal{grid-template-columns:repeat(9,1fr);gap:8px;margin-top:18px}
+  .day{padding:16px 6px 10px}
+  .day .dn{font-size:42px}
+  .chip{font-size:14px;padding:5px 5px 6px}
+  .day .flag{margin:0 -6px 8px}
+  .cal-head .m{font-size:72px}
   .lot .wrap{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
   .lot-photo{position:sticky;top:24px}
   .pt-body{grid-template-columns:auto 1fr;gap:56px;align-items:end}
@@ -322,19 +337,11 @@ a{color:inherit;text-decoration:none}
 <!-- schedule -->
 <section class="sch" id="schedule">
   <div class="wrap">
-    <p class="kicker rv">Schedule</p>
+    <p class="kicker rv">Black Friday Calendar</p>
     <h2 class="h2 rv">おトクが重なる<br>9日間カレンダー</h2>
-    <div class="tl rv" id="tl">
-      <div class="tl-days" id="tlDays"></div>
-      <div class="tl-rows">
-        <div class="tl-grid" aria-hidden="true" id="tlGrid"></div>
-        <div class="bar r" id="barLot"><span>抽選プレゼント</span></div>
-        <div class="bar y" id="barPt"><span>店内ポイント5倍</span></div>
-        <div class="bar k" id="barBf"><span>BF買いまわり 最大10倍</span></div>
-        <div class="bar c" id="barCard"><span>4倍</span><span>4倍</span></div>
-        <div class="now" id="now"></div>
-      </div>
-    </div>
+    <p class="lead rv">めくるほどおトクが重なっていく9日間。<b>11月20日(金)</b>は4つのおトクがそろう、いちばんおトクな日です。</p>
+    <div class="cal-head rv"><p class="m"><small>BLACK FRIDAY</small>NOVEMBER</p><p class="y">2026</p></div>
+    <div class="cal" id="cal"></div>
     <div class="tl-legend rv">
       <p style="--c:var(--red)"><span><b>抽選でTHE RED 5,000円コース</b>11月17日(火) 0:00〜11月25日(水) 23:59</span></p>
       <p style="--c:var(--yellow)"><span><b>店内ポイント5倍</b>11月19日(木) 20:00〜11月25日(水) 1:59</span></p>
@@ -347,7 +354,7 @@ a{color:inherit;text-decoration:none}
 <!-- 01 lottery -->
 <section class="lot" id="present">
   <div class="wrap">
-    <div class="lot-photo rv"><img src="images/cat-red-001_s1all.jpg" alt="プレミアムカタログギフト THE RED" width="1000" height="1000"></div>
+    <div class="lot-photo rv"><img src="images/thered-garnet.webp" alt="THE RED ガーネット 5,000ポイントコース" width="1000" height="1000"></div>
     <div class="lot-text">
       <p class="kicker rv">01 — Present</p>
       <h2 class="h2 rv"><span class="nw">1回2万円以上の</span><span class="nw">ご注文で</span><br>THE REDが当たる</h2>
@@ -355,7 +362,7 @@ a{color:inherit;text-decoration:none}
       <div class="lot-prize rv">
         <p class="en">THE RED</p>
         <h3>プレミアムカタログギフト<br>THE RED 5,000円コース</h3>
-        <p>注目ブランドのアイテムや家電、美容グッズから好きなものを選べる、カードタイプのカタログギフト。贈りものの名手が選ぶ、いま話題の一冊です。</p>
+        <img class="lot-concept" src="images/thered-concept.webp" alt="THE REDは、いまもっとも注目されるテクノロジー、ブランド、プロダクトを集め、その出会いを贈り物という形にしました。選ぶ楽しさ。見つける歓び。最新の感動を、ここから。" width="1000" height="1000" loading="lazy">
       </div>
       <dl class="dl rv">
         <div><dt>期間</dt><dd>11月17日(火) 0:00〜<br>11月25日(水) 23:59のご注文</dd></div>
@@ -466,6 +473,7 @@ var PT_END    = new Date("2026-11-25T01:59:59+09:00");
 var BF_START  = PT_START; /* 楽天ブラックフライデー買いまわり(最大10倍) */
 var BF_END    = PT_END;
 var CARD_DAYS = [20,25]; /* 0と5のつく日(楽天カードで4倍) */
+var BEST_DAY  = 20;      /* カレンダーで「いちばんおトク」にする日 */
 var CAB = "https://image.rakuten.co.jp/patie/cabinet/";
 var ITEM = "https://item.rakuten.co.jp/patie/";
 
@@ -573,32 +581,36 @@ function renderMarquee(){
   document.getElementById("mq").innerHTML=one+one+one+one;
 }
 function renderTimeline(){
-  var wd=["日","月","火","水","木","金","土"], h="";
+  var wd=["日","月","火","水","木","金","土"], h="", now=new Date();
+  var C=[
+    {c:"r",sm:"THE RED",t:"抽選",s:LOT_START,e:LOT_END},
+    {c:"y",sm:"店内",t:"P5倍",s:PT_START,e:PT_END},
+    {c:"k",sm:"BF買いまわり",t:"最大10倍",s:BF_START,e:BF_END},
+    {c:"c",sm:"楽天カード",t:"4倍",days:CARD_DAYS}
+  ];
+  function hm(t){return t.getHours()+":"+pad(t.getMinutes());}
   for(var d=17; d<=25; d++){
-    var dt=new Date("2026-11-"+d+"T12:00:00+09:00"), w=dt.getDay();
-    h+='<div class="'+(w===0||w===6?"we ":"")+(CARD_DAYS.indexOf(d)>=0?"c5":"")+'"><b>'+d+'</b><small>'+wd[w]+'</small></div>';
+    var ds=new Date("2026-11-"+d+"T00:00:00+09:00"), de=new Date("2026-11-"+d+"T23:59:59+09:00"), w=ds.getDay();
+    var chips="", n=0;
+    C.forEach(function(x){
+      var note="";
+      if(x.days){ if(x.days.indexOf(d)<0) return; }
+      else{
+        if(x.e<ds || x.s>de) return;
+        if(x.s>ds) note=hm(x.s)+"〜";
+        else if(x.e<de && x.e.getTime()-ds.getTime()<86399000) note="〜"+hm(x.e);
+      }
+      n++;
+      chips+='<span class="chip '+x.c+'"><small>'+esc(x.sm)+(note?" "+note:"")+'</small>'+esc(x.t)+'</span>';
+    });
+    var cls="day rv"+(w===0||w===6?" we":"")+(d===BEST_DAY?" best":"");
+    if(now>=ds && now<=de) cls+=" today";
+    else if(now>de) cls+=" past";
+    h+='<div class="'+cls+'">'+(d===BEST_DAY?'<span class="flag">いちばんおトク</span>':"")+(now>=ds&&now<=de?'<span class="now">TODAY</span>':"")+
+       '<div class="dh"><span class="dn">'+d+'</span><span class="wd">'+wd[w]+'</span></div>'+
+       '<div class="chips">'+chips+'</div><p class="cnt">おトク<b>'+n+'</b>つ</p></div>';
   }
-  document.getElementById("tlDays").innerHTML=h;
-  var span=LOT_END-LOT_START+1000;
-  function setBar(id,s,e,idx){
-    var el=document.getElementById(id).querySelectorAll("span")[idx||0];
-    el.style.setProperty("--s",((s-LOT_START)/span*100)+"%");
-    el.style.setProperty("--w",((e-s)/span*100)+"%");
-  }
-  setBar("barLot",LOT_START,LOT_END);
-  setBar("barPt",PT_START,PT_END);
-  setBar("barBf",BF_START,BF_END);
-  CARD_DAYS.forEach(function(d,i){
-    setBar("barCard",new Date("2026-11-"+d+"T00:00:00+09:00"),new Date("2026-11-"+d+"T23:59:59+09:00"),i);
-  });
-  var g="";
-  for(var k=17;k<=25;k++) g+='<i class="'+(CARD_DAYS.indexOf(k)>=0?"c5":"")+'"></i>';
-  document.getElementById("tlGrid").innerHTML=g;
-  var now=new Date();
-  if(now>=LOT_START && now<=LOT_END){
-    var m=document.getElementById("now");
-    m.style.left=((now-LOT_START)/span*100)+"%"; m.style.display="block";
-  }
+  document.getElementById("cal").innerHTML=h;
 }
 function renderRecipes(){
   var h="";

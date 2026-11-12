@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>コードシーのブラックフライデー｜黒い金曜日に赤いギフトが当たる</title>
+<meta name="description" content="コードシーギフトセレクションのブラックフライデー。総額20,000円以上のご注文から抽選で3名様にTHE RED 5,000円コースが当たる。店内ポイント5倍。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211d16;
+  --night:#16130e;
+  --night-2:#211c15;
+  --paper:#fbf7ee;
+  --paper-deep:#f3ecd9;
+  --yellow:#ecc501;
+  --terracotta:#cb4d00;
+  --red:#d7141c;
+  --red-on-dark:#f0302f;
+  --price:#c4120a;
+  --line:rgba(33,29,22,.14);
+  --line-dark:rgba(251,247,238,.18);
+  --jp:"Noto Sans JP",sans-serif;
+  --en:"Jost","Noto Sans JP",sans-serif;
+  --wrap:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--jp);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.85;letter-spacing:.05em;padding-bottom:64px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.kicker{font-family:var(--en);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--terracotta)}
+.h2{font-weight:700;font-size:clamp(28px,7vw,46px);line-height:1.4;letter-spacing:.06em;margin-top:10px}
+.lead{margin-top:18px;font-size:16px;max-width:640px}
+.nw{display:inline-block}
+.yen{font-size:.55em;margin-left:.08em;font-family:var(--jp);font-weight:700}
+
+/* draft */
+.draft{background:#000;color:#bbb;font-size:12px;text-align:center;padding:4px 8px;letter-spacing:.1em}
+
+/* header */
+.hd{background:var(--paper)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.hd-logo{display:flex;align-items:flex-end;gap:10px}
+.hd-logo img{width:190px}
+.hd-logo small{font-family:var(--en);font-size:10px;letter-spacing:.16em;line-height:1;padding-bottom:2px}
+.hd-tag{display:none;font-size:12px;font-weight:500;letter-spacing:.14em}
+
+/* FV */
+.fv{background:var(--night);color:var(--paper);overflow:hidden;position:relative}
+.fv .wrap{display:grid;grid-template-columns:1fr;padding-top:28px;padding-bottom:56px}
+.fv-kick{font-family:var(--en);font-weight:500;font-size:13px;letter-spacing:.3em;color:var(--yellow)}
+.fv-title{font-family:var(--en);font-weight:600;font-size:clamp(76px,22.5vw,176px);line-height:.84;letter-spacing:-.01em;margin-top:14px}
+.fv-title span{display:block}
+.fv-title .y{font-size:.34em;letter-spacing:.06em;color:var(--yellow);font-weight:500;margin-top:.3em}
+.fv-photo{position:relative;margin:76px -20px 0 18%;}
+.fv-photo img{width:100%;aspect-ratio:1/1}
+.eyes{position:absolute;top:-44px;left:12%;display:flex;gap:6px;align-items:flex-end}
+.eye{width:34px;height:40px;background:var(--paper);border-radius:50%;position:relative;overflow:hidden;animation:blink 5s infinite}
+.eye i{position:absolute;width:17px;height:17px;border-radius:50%;background:var(--ink);left:50%;top:55%;transform:translate(-50%,-50%)}
+.eyes-say{font-size:14px;font-weight:500;margin-left:12px;padding-bottom:4px;color:var(--paper);letter-spacing:.1em}
+@keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+.fv-copy{margin-top:36px}
+.fv-catch{font-weight:700;font-size:clamp(32px,8.6vw,54px);line-height:1.42;letter-spacing:.06em}
+.fv-catch em{font-style:normal;color:var(--red-on-dark)}
+.fv-lead{margin-top:18px;font-size:16px;color:rgba(251,247,238,.82)}
+.fv-facts{display:flex;margin-top:30px;border-top:1px solid var(--line-dark)}
+.fv-facts a{flex:1;padding:18px 0 0;display:block}
+.fv-facts a+a{border-left:1px solid var(--line-dark);padding-left:18px}
+.fv-facts small{display:block;font-size:13px;color:rgba(251,247,238,.7);letter-spacing:.1em}
+.fv-facts b{font-family:var(--en);font-weight:600;font-size:52px;line-height:1.1;letter-spacing:0}
+.fv-facts b .u{font-family:var(--jp);font-size:20px;margin-left:4px;font-weight:700}
+.fv-facts .r b{color:var(--red-on-dark)}
+.fv-facts .p b{color:var(--yellow)}
+.fv-facts .en{display:block;font-size:12px;font-family:var(--en);letter-spacing:.2em;margin-top:2px;color:rgba(251,247,238,.6)}
+
+/* marquee */
+.mq{background:var(--yellow);color:var(--ink);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--ink)}
+.mq-track{display:inline-flex;animation:mq 26s linear infinite;font-family:var(--en);font-weight:600;font-size:18px;letter-spacing:.18em;padding:11px 0}
+.mq-track span{padding:0 22px}
+.mq-track span:nth-child(even){font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* schedule */
+.sch{padding:76px 0 70px}
+.tl{margin-top:36px}
+.tl-days{display:grid;grid-template-columns:repeat(9,1fr);border-bottom:1px solid var(--ink)}
+.tl-days div{text-align:center;padding-bottom:8px;line-height:1.15}
+.tl-days b{display:block;font-family:var(--en);font-weight:600;font-size:clamp(20px,5.4vw,34px)}
+.tl-days small{font-size:12px}
+.tl-days .we small{color:var(--terracotta);font-weight:700}
+.tl-rows{position:relative;padding:18px 0 0}
+.tl-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(9,1fr);pointer-events:none}
+.tl-grid i{border-right:1px dashed var(--line)}
+.tl-grid i:last-child{border-right:0}
+.bar{position:relative;height:44px;margin-bottom:14px}
+.bar span{position:absolute;top:0;bottom:0;left:var(--s);width:0;transition:width 1.3s cubic-bezier(.2,.7,.2,1);display:flex;align-items:center;padding-left:12px;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden}
+.bar.on span{width:var(--w)}
+.bar.r span{background:var(--red);color:#fff}
+.bar.y span{background:var(--yellow);color:var(--ink)}
+.now{position:absolute;top:-4px;bottom:0;width:0;border-left:2px solid var(--ink);display:none}
+.now::before{content:"いまここ";position:absolute;top:-24px;left:-2px;transform:translateX(-50%);font-size:12px;font-weight:700;background:var(--ink);color:var(--paper);padding:0 6px;line-height:20px;white-space:nowrap}
+.tl-legend{display:grid;gap:14px;margin-top:22px}
+.tl-legend p{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;font-size:15px;line-height:1.6}
+.tl-legend p::before{content:"";width:14px;height:14px;margin-top:5px;background:var(--c)}
+.tl-legend b{display:block;font-size:17px}
+
+/* lottery */
+.lot{background:var(--paper-deep);padding:80px 0}
+.lot .wrap{display:grid;gap:40px}
+.lot-photo{position:relative}
+.lot-photo img{width:100%;aspect-ratio:1/1}
+.lot-num{display:flex;align-items:flex-end;gap:10px;margin-top:20px;line-height:1}
+.lot-num small{font-size:22px;font-weight:700;padding-bottom:14px}
+.lot-num b{font-family:var(--en);font-weight:600;font-size:clamp(120px,34vw,190px);color:var(--red);line-height:.8;letter-spacing:-.02em}
+.lot-num .u{font-size:30px;font-weight:700;padding-bottom:10px}
+.lot-prize{margin-top:28px;padding-top:22px;border-top:2px solid var(--ink)}
+.lot-prize .en{font-family:var(--en);font-weight:600;font-size:15px;letter-spacing:.22em;color:var(--red)}
+.lot-prize h3{font-size:clamp(22px,5.6vw,30px);font-weight:700;line-height:1.5;margin-top:4px}
+.lot-prize p{margin-top:10px}
+.dl{margin-top:26px}
+.dl div{display:grid;grid-template-columns:5.5em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.6}
+.dl dt{font-weight:700}
+.dl dd b{font-size:1.15em}
+.btn{display:inline-flex;align-items:center;gap:12px;margin-top:28px;background:var(--ink);color:var(--paper);font-weight:700;font-size:16px;padding:16px 26px;letter-spacing:.08em}
+.btn::after{content:"";width:8px;height:8px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.btn.lt{background:var(--paper);color:var(--ink)}
+.note{font-size:13px;line-height:1.7;margin-top:14px;color:rgba(33,29,22,.75)}
+
+/* point */
+.pt{background:var(--night);color:var(--paper);padding:80px 0 84px;overflow:hidden}
+.pt .kicker{color:var(--yellow)}
+.pt-body{display:grid;gap:10px;margin-top:6px}
+.pt-big{display:flex;align-items:flex-end;line-height:.78}
+.pt-big .shop{writing-mode:vertical-rl;font-weight:700;font-size:clamp(26px,7vw,40px);letter-spacing:.2em;padding-bottom:.4em;margin-right:6px}
+.pt-big .five{font-family:var(--en);font-weight:600;font-size:clamp(240px,70vw,420px);color:var(--yellow);letter-spacing:-.04em}
+.pt-big .bai{font-weight:700;font-size:clamp(56px,15vw,96px);padding-bottom:.12em;margin-left:-.05em}
+.pt-word{font-weight:700;font-size:clamp(30px,8vw,48px);line-height:1.35;letter-spacing:.08em}
+.pt-period{margin-top:24px;font-family:var(--en);font-weight:500;font-size:clamp(24px,6.4vw,36px);line-height:1.4;letter-spacing:.03em}
+.pt-period .d{display:block}
+.pt-period .jp{font-family:var(--jp);font-size:.62em;font-weight:500}
+.pt-period .arr{display:inline-block;width:1.2em;height:2px;background:var(--yellow);vertical-align:middle;margin:0 .3em}
+.cd{margin-top:22px;display:inline-flex;align-items:baseline;gap:14px;border:1px solid var(--line-dark);padding:12px 18px}
+.cd small{font-size:14px;font-weight:700;color:var(--yellow)}
+.cd b{font-family:var(--en);font-weight:500;font-size:26px;letter-spacing:.06em}
+.cd b i{font-style:normal;font-family:var(--jp);font-size:14px;margin:0 6px 0 2px}
+.pt-lead{margin-top:26px;color:rgba(251,247,238,.85);max-width:560px}
+.pt .note{color:rgba(251,247,238,.7)}
+
+/* recipe */
+.rc{background:var(--yellow);padding:80px 0}
+.rc .kicker{color:var(--ink)}
+.rc-list{display:grid;gap:22px;margin-top:40px}
+.rc-item{background:var(--paper);padding:26px 22px 24px}
+.rc-item header{display:flex;align-items:baseline;gap:14px}
+.rc-item header .no{font-family:var(--en);font-weight:600;font-size:15px;letter-spacing:.16em;color:var(--terracotta)}
+.rc-item h3{font-size:22px;font-weight:700;line-height:1.45}
+.rc-item .for{font-size:14px;margin-top:2px;color:rgba(33,29,22,.75)}
+.rc-goods{display:grid;gap:12px;margin-top:18px}
+.rc-goods a{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;font-size:14px;line-height:1.5}
+.rc-goods img{width:72px;aspect-ratio:1/1}
+.rc-goods .q{font-family:var(--en);font-weight:600;font-size:18px;white-space:nowrap;text-align:right}
+.rc-goods .q small{display:block;font-family:var(--jp);font-size:12px;font-weight:500}
+.rc-sum{margin-top:18px;padding-top:14px;border-top:1px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline}
+.rc-sum span{font-weight:700}
+.rc-sum b{font-family:var(--en);font-weight:600;font-size:34px;color:var(--price);line-height:1}
+.meter{position:relative;height:10px;background:var(--paper-deep);margin-top:16px}
+.meter i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--red);transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.meter::after{content:"";position:absolute;top:-6px;bottom:-6px;left:var(--goal);border-left:2px solid var(--ink)}
+.meter-l{display:flex;justify-content:space-between;font-size:12px;margin-top:8px}
+.meter-l b{color:var(--red)}
+.rc .note{color:rgba(33,29,22,.8)}
+
+/* ranking & items */
+.sec{padding:80px 0}
+.sec.alt{background:var(--paper-deep)}
+.sec-head{display:grid;gap:4px}
+.sec-head .meta{font-size:14px;margin-top:8px}
+.more{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;margin-top:18px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+.more::after{content:"";width:7px;height:7px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 16px;margin-top:36px}
+.card{display:flex;flex-direction:column}
+.card .ph{position:relative;background:#fff}
+.card .ph img{width:100%;aspect-ratio:1/1;object-fit:contain}
+.card .rk{position:absolute;left:0;top:0;background:var(--ink);color:var(--paper);font-family:var(--en);font-weight:600;font-size:18px;line-height:1;padding:8px 10px 7px;min-width:38px;text-align:center}
+.card .rk.top{background:var(--red);color:#fff}
+.card .nm{font-size:14px;line-height:1.6;margin-top:10px;font-weight:500}
+.card .crs{font-size:13px;font-weight:700;margin-top:6px}
+.card .pr{font-family:var(--en);font-weight:600;font-size:26px;line-height:1.1;color:var(--price);margin-top:6px;letter-spacing:.01em}
+.card .pr .fr{font-family:var(--jp);font-size:13px;font-weight:700;margin-left:2px}
+.card .tags{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;font-size:12px;font-weight:700;line-height:1.5}
+.card .tags .ship{color:var(--terracotta)}
+.card .tags .lt{color:var(--ink)}
+.card .tags .lt.hit{color:var(--red)}
+.rank-grid .card:first-child{grid-column:1/-1;display:grid;grid-template-columns:52% 1fr;gap:18px;align-items:center}
+.rank-grid .card:nth-child(-n+3) .nm{font-size:15px}
+.rank-grid .card:first-child .nm{font-size:16px;margin-top:0}
+.rank-grid .card:first-child .pr{font-size:34px}
+.rank-grid .card:first-child .rk{font-size:26px;padding:10px 14px 9px}
+
+/* category index */
+.cx{padding:70px 0;background:var(--night);color:var(--paper)}
+.cx .kicker{color:var(--yellow)}
+.cx-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark);margin-top:30px;border:1px solid var(--line-dark)}
+.cx-list a{background:var(--night);display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center;padding:14px 12px;font-weight:700;font-size:15px;line-height:1.4}
+.cx-list img{width:56px;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.cx-list small{display:block;font-family:var(--en);font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--yellow)}
+
+/* category section with banner */
+.cat-body{display:grid;gap:28px;margin-top:34px}
+.cat-banner img{width:100%;aspect-ratio:1/1}
+.cat-body .grid{margin-top:0}
+
+/* foot notes */
+.fn{background:var(--night);color:rgba(251,247,238,.85);padding:60px 0 40px;font-size:14px}
+.fn h2{font-size:18px;color:var(--paper);margin-bottom:12px}
+.fn h3{font-size:15px;color:var(--yellow);margin:20px 0 6px}
+.fn ul{list-style:none}
+.fn li{position:relative;padding-left:1.1em;line-height:1.75}
+.fn li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:1px;background:currentColor}
+.fn-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.fn-copy{margin-top:40px;font-family:var(--en);font-size:12px;letter-spacing:.2em;opacity:.6}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #000}
+.bn a{color:var(--paper);text-align:center;padding:9px 2px 8px;font-size:12px;font-weight:700;line-height:1.3;letter-spacing:.04em}
+.bn a small{display:block;font-family:var(--en);font-weight:500;font-size:10px;letter-spacing:.14em;color:var(--yellow)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.mq-track,.eye{animation:none}}
+
+/* ---------- PC ---------- */
+@media (min-width:860px){
+  body{font-size:17px;padding-bottom:0}
+  .wrap{padding:0 40px}
+  .hd .wrap{height:76px}
+  .hd-logo img{width:240px}
+  .hd-tag{display:block;font-size:13px}
+  .fv .wrap{grid-template-columns:1fr 1fr;column-gap:56px;padding-top:56px;padding-bottom:84px;align-items:end}
+  .fv-head{grid-column:1;grid-row:1}
+  .fv-title{font-size:clamp(120px,12.5vw,176px)}
+  .fv-title .y{font-size:.3em}
+  .fv-catch{font-size:clamp(36px,3.6vw,48px)}
+  .fv-photo{grid-column:2;grid-row:1/4;margin:60px -40px 0 0;align-self:center}
+  .fv-copy{grid-column:1;grid-row:2;margin-top:44px}
+  .fv-facts{grid-column:1;grid-row:3;align-self:end}
+  .eyes{top:-50px}
+  .eye{width:40px;height:48px}
+  .eye i{width:20px;height:20px}
+  .lot .wrap{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .lot-photo{position:sticky;top:24px}
+  .pt-body{grid-template-columns:auto 1fr;gap:56px;align-items:end}
+  .pt-big .five{font-size:400px}
+  .rc-list{grid-template-columns:1fr 1fr;gap:28px}
+  .grid{grid-template-columns:repeat(4,1fr);gap:40px 24px}
+  .rank-grid{grid-template-columns:repeat(12,1fr)}
+  .rank-grid .card{grid-column:span 3}
+  .rank-grid .card:nth-child(-n+3){grid-column:span 4}
+  .rank-grid .card:first-child{display:flex;gap:0;align-items:stretch}
+  .rank-grid .card:nth-child(-n+3) .nm{font-size:16px;margin-top:12px}
+  .rank-grid .card:nth-child(-n+3) .pr{font-size:34px}
+  .rank-grid .card:nth-child(-n+3) .rk{font-size:26px;padding:10px 14px 9px}
+  .cx-list{grid-template-columns:repeat(3,1fr)}
+  .cx-list a{grid-template-columns:72px 1fr;font-size:17px;padding:18px}
+  .cx-list img{width:72px}
+  .cat-body{grid-template-columns:5fr 7fr;gap:40px;align-items:start}
+  .cat-body.nobanner{grid-template-columns:1fr}
+  .cat-body .grid.g3{grid-template-columns:repeat(2,1fr)}
+  .cat-banner{position:sticky;top:24px}
+  .bn{left:50%;right:auto;transform:translateX(-50%);width:640px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="draft">確認用ドラフト（価格・内容は2026年11月12日時点）</div>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="hd-logo" href="https://www.rakuten.co.jp/patie/"><img src="images/logo_01.svg" alt="code℃ by SOMMELIER@GIFT"></a>
+    <p class="hd-tag">コードシーのブラックフライデー</p>
+  </div>
+</header>
+
+<!-- FV -->
+<section class="fv" id="top">
+  <div class="wrap">
+    <div class="fv-head">
+      <p class="fv-kick">code℃ GIFT SELECTION</p>
+      <h1 class="fv-title"><span>BLACK </span><span>FRIDAY</span><span class="y">PRESENT &amp; POINT</span></h1>
+    </div>
+    <div class="fv-photo">
+      <div class="eyes" aria-hidden="true"><span class="eye"><i></i></span><span class="eye"><i></i></span><span class="eyes-say">当たるかも</span></div>
+      <img src="images/brand-thered.jpg" alt="赤い箱のカタログギフト THE RED" width="1080" height="1080">
+    </div>
+    <div class="fv-copy">
+      <p class="fv-catch">黒い金曜日に<br><span class="nw"><em>赤いギフト</em>が</span><span class="nw">当たる</span></p>
+      <p class="fv-lead">期間中、総額20,000円以上お買い上げの方から抽選で3名様に、いま話題のカタログギフト「THE RED」5,000円コースをお贈りします。</p>
+    </div>
+    <div class="fv-facts">
+      <a class="r" href="#present"><small>抽選で</small><b>3<span class="u">名様</span></b><span class="en">PRESENT</span></a>
+      <a class="p" href="#point"><small>店内ポイント</small><b>5<span class="u">倍</span></b><span class="en">POINT</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="mq-track" id="mq"></div></div>
+
+<!-- schedule -->
+<section class="sch" id="schedule">
+  <div class="wrap">
+    <p class="kicker rv">Schedule</p>
+    <h2 class="h2 rv">2つのおトクが<br>重なる9日間</h2>
+    <div class="tl rv" id="tl">
+      <div class="tl-days" id="tlDays"></div>
+      <div class="tl-rows">
+        <div class="tl-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="bar r" id="barLot"><span>抽選プレゼント</span></div>
+        <div class="bar y" id="barPt"><span>ポイント5倍</span></div>
+        <div class="now" id="now"></div>
+      </div>
+    </div>
+    <div class="tl-legend rv">
+      <p style="--c:var(--red)"><span><b>抽選でTHE RED 5,000円コース</b>11月17日(火) 0:00〜11月25日(水) 23:59</span></p>
+      <p style="--c:var(--yellow)"><span><b>店内ポイント5倍</b>11月19日(木) 20:00〜11月25日(水) 1:59</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 01 lottery -->
+<section class="lot" id="present">
+  <div class="wrap">
+    <div class="lot-photo rv"><img src="images/cat-red-001_s1all.jpg" alt="プレミアムカタログギフト THE RED" width="1000" height="1000"></div>
+    <div class="lot-text">
+      <p class="kicker rv">01 — Present</p>
+      <h2 class="h2 rv"><span class="nw">総額2万円以上の</span><span class="nw">ご注文で</span><br>THE REDが当たる</h2>
+      <div class="lot-num rv"><small>抽選で</small><b>3</b><span class="u">名様</span></div>
+      <div class="lot-prize rv">
+        <p class="en">THE RED</p>
+        <h3>プレミアムカタログギフト<br>THE RED 5,000円コース</h3>
+        <p>注目ブランドのアイテムや家電、美容グッズから好きなものを選べる、カードタイプのカタログギフト。贈りものの名手が選ぶ、いま話題の一冊です。</p>
+      </div>
+      <dl class="dl rv">
+        <div><dt>期間</dt><dd>11月17日(火) 0:00〜<br>11月25日(水) 23:59のご注文</dd></div>
+        <div><dt>対象</dt><dd>総額<b>20,000円以上</b>お買い上げの方</dd></div>
+        <div><dt>賞品</dt><dd>THE RED 5,000円コース<br>抽選で<b>3名様</b></dd></div>
+      </dl>
+      <a class="btn rv" href="https://item.rakuten.co.jp/patie/cat-red-001/">THE REDの中身を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 point -->
+<section class="pt" id="point">
+  <div class="wrap">
+    <p class="kicker rv">02 — Point</p>
+    <div class="pt-body">
+      <div class="pt-big rv" aria-label="店内ポイント5倍"><span class="shop">店内</span><span class="five">5</span><span class="bai">倍</span></div>
+      <div>
+        <p class="pt-word rv">お歳暮もおせちも<br>ポイント5倍</p>
+        <p class="pt-period rv"><span class="d">11.19<span class="jp">(木)</span> 20:00</span><span class="d"><span class="arr"></span>11.25<span class="jp">(水)</span> 1:59</span></p>
+        <div class="cd rv" id="cd"><small id="cdLabel">開始まで</small><b id="cdTime">--</b></div>
+        <p class="pt-lead rv">年末のごあいさつ、新年のおせち、自分へのごほうび家電まで。この期間のお買いものは、いつもの5倍のポイントがつきます。</p>
+        <p class="note rv">※一部対象外の商品があります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- recipe -->
+<section class="rc" id="recipe">
+  <div class="wrap">
+    <p class="kicker rv">How to 20,000</p>
+    <h2 class="h2 rv">ちょうどいい2万円の<br>つくりかた</h2>
+    <p class="lead rv">お歳暮を何軒か、おせちと手土産を少し。年末に必要なものを合わせると、抽選の対象になる2万円は意外とすぐ。売れ筋で組んだ4つの例です。</p>
+    <div class="rc-list" id="recipes"></div>
+    <p class="note rv">※価格は2026年11月12日時点の税込価格です。種類・個数により価格が変わる商品があります。</p>
+  </div>
+</section>
+
+<!-- ranking -->
+<section class="sec" id="ranking">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker rv">Ranking</p>
+      <h2 class="h2 rv">いまよく選ばれている<br>15のギフト</h2>
+      <p class="meta rv">ショップ内の売れ筋ランキング（11月5日〜11日集計）</p>
+    </div>
+    <div class="grid rank-grid" id="rankGrid"></div>
+  </div>
+</section>
+
+<!-- category index -->
+<section class="cx" id="category">
+  <div class="wrap">
+    <p class="kicker rv">Category</p>
+    <h2 class="h2 rv">売れ筋をジャンルから</h2>
+    <nav class="cx-list rv" id="cxList"></nav>
+  </div>
+</section>
+
+<div id="cats"></div>
+
+<!-- notes -->
+<section class="fn">
+  <div class="wrap">
+    <h2>ご注意</h2>
+    <h3>抽選プレゼントについて</h3>
+    <ul>
+      <li>対象は11月17日(火) 0:00〜11月25日(水) 23:59のご注文です。</li>
+      <li>期間中のご注文で総額20,000円以上お買い上げの方が対象です。</li>
+      <li>賞品はプレミアムカタログギフト THE RED 5,000円コースです。当選者3名様にお届けします。</li>
+    </ul>
+    <h3>店内ポイント5倍について</h3>
+    <ul>
+      <li>11月19日(木) 20:00〜11月25日(水) 1:59のご注文が対象です。</li>
+      <li>一部対象外の商品があります。</li>
+    </ul>
+    <h3>掲載商品について</h3>
+    <ul>
+      <li>価格は2026年11月12日時点の税込価格です。最新の価格・在庫は各商品ページでご確認ください。</li>
+      <li>「◯点で抽選対象」は、その商品だけで総額20,000円以上になる個数の目安です。</li>
+    </ul>
+    <div class="fn-links">
+      <a class="btn lt" href="https://www.rakuten.co.jp/patie/">コードシーのトップへ</a>
+    </div>
+    <p class="fn-copy">code℃ GIFT SELECTION</p>
+  </div>
+</section>
+
+<nav class="bn" aria-label="ページ内メニュー">
+  <a href="#present"><small>PRESENT</small>抽選</a>
+  <a href="#point"><small>POINT</small>5倍</a>
+  <a href="#recipe"><small>20,000</small>2万円</a>
+  <a href="#ranking"><small>RANKING</small>売れ筋</a>
+  <a href="#category"><small>CATEGORY</small>ジャンル</a>
+</nav>
+
+<script>
+(function(){
+"use strict";
+
+/* ========== 設定 ========== */
+var GOAL = 20000;
+var LOT_START = new Date("2026-11-17T00:00:00+09:00");
+var LOT_END   = new Date("2026-11-25T23:59:59+09:00");
+var PT_START  = new Date("2026-11-19T20:00:00+09:00");
+var PT_END    = new Date("2026-11-25T01:59:59+09:00");
+var CAB = "https://image.rakuten.co.jp/patie/cabinet/";
+var ITEM = "https://item.rakuten.co.jp/patie/";
+
+/* ========== 商品データ ==========
+  n: 表示名 / p: 税込価格 / i: 画像(cabinet以下) / f: true=「〜」表記
+  s: true=送料無料 / course: カタログのコース額 / url: 個別URL(省略時は商品コード) */
+var P = {
+  "catalog-selection_aeo":{n:"code℃ プレミアムカタログギフト 15,900円コース",p:11960,course:15900,s:true,i:"products_page/catalog/premium/catalog15800.jpg"},
+  "the-003":{n:"ザ・スウィーツ キャラメルサンドクッキー 20個",p:3240,s:true,i:"food/sweets2/the-003_s1.jpg"},
+  "ymj-01169":{n:"tower 目隠しワゴン 2段／3段",p:11000,f:true,s:true,i:"0000/ymj/ys1/ymj-01169_s01.jpg"},
+  "tower-043":{n:"tower 蓋付き目隠し分別ダストワゴン",p:6820,f:true,s:true,i:"0000/ymj/ys1_2/tower-043_s01.jpg"},
+  "catalog-selection_eo":{n:"code℃ プレミアムカタログギフト 5,900円コース",p:4660,course:5900,s:true,i:"products_page/catalog/premium/catalog5800.jpg"},
+  "food-01235":{n:"シュガーバターサンドの木",p:450,f:true,i:"food/sweets6/food-01235_s1.jpg"},
+  "catalog-selection_aoo":{n:"code℃ プレミアムカタログギフト 10,900円コース",p:8140,course:10900,i:"products_page/catalog/premium/catalog10800.jpg"},
+  "ymj-01422":{n:"tower フィルムフック 歯ブラシ＆チューブホルダー",p:1760,s:true,i:"0000/ymj/ys1/1497_s01.jpg"},
+  "food-01319":{n:"期間限定 シュガーバターサンドの木 ベイクドチーズケーキ風",p:756,f:true,i:"food/sweets6/food-01319_s1.jpg"},
+  "food-047-b":{n:"中島大祥堂 丹波焼菓子詰合せ 10個",p:2818,f:true,s:true,i:"food/sweets7/food-047-b_s1.jpg"},
+  "catalog-selection_boo":{n:"code℃ プレミアムカタログギフト 20,000円コース",p:15360,course:20000,s:true,i:"products_page/catalog/premium/catalog20800.jpg"},
+  "goods-01794":{n:"象印 ステンレスマグ 360mL 選べるボトルカバー付き",p:2860,s:true,i:"0000/default/s1/goods-01794_s1.jpg"},
+  "t-fal-350":{n:"T-fal 電気ケトル ジャスティン ロック 1.2L",p:4199,s:true,i:"0000/default/s1/t-fal-350_s1.jpg"},
+  "t-fal-433":{n:"T-fal インジニオ・ネオ IHパレット セット10",p:13800,s:true,i:"0000/default/s1/t-fal-433_s1.jpg"},
+  "osechi-119":{n:"おせち2027 板前魂の七福神ジャパン 二段重 約4〜5人前",p:19980,s:true,i:"food/osechi/2026/osechi-119_s1.jpg"},
+
+  "food-01611":{n:"ひととえ 3層デザートプリンパフェ 6個",p:2160,f:true,i:"food/sweets7/food-01611_s1.jpg"},
+  "ad-sweets-5293":{n:"森の庭 焦がしキャラメルバーム詰合せ 18個",p:3240,s:true,i:"food/sweets3/mrnn20_s1.jpg"},
+  "godiva-027":{n:"ゴディバ パティスリー アソートメント 21個",p:5400,s:true,i:"0000/gift2/godiva-027_s1.jpg"},
+  "food-01113":{n:"ヨックモック シガール 30本",p:2970,i:"food/sweets5/food-01113_s1.jpg"},
+  "sha-038":{n:"京都・辻が花 お茶漬最中＆お吸い物最中詰合せ",p:3480,s:true,i:"food/kyouraku/kt_csm80_s1.jpg"},
+  "star_b_003":{n:"スターバックス オリガミ パーソナルドリップコーヒー",p:3240,s:true,i:"etc_products5/stb30_s1b.jpg"},
+  "sha-107":{n:"帝国ホテル スープ缶詰セット 5缶",p:3430,s:true,i:"food/teikoku_hotel/ths6_s1b.jpg"},
+  "food-01603":{n:"スープボヤージュ 世界のカップスープ 6個",p:3980,s:true,i:"food/food6/food-01603_s1.jpg"},
+
+  "cat-red-001":{n:"プレミアムカタログギフト THE RED カードタイプ",p:6490,f:true,s:true,i:"catalog001/red/cat-red-001_s1all.jpg"},
+  "illums_cat_002":{n:"イルムス 北欧雑貨のカタログギフト 5,900円コース",p:6490,s:true,i:"catalog001/illums/illums2020058_s1a.jpg"},
+  "cat-tower-sweets-002":{n:"tower カタログギフト＋GODIVA お菓子セット",p:5000,s:true,i:"catalog001/webcat/ca-sweets-002_s1.jpg"},
+  "cat_wagyu_001":{n:"選べる国産和牛 カタログギフト 5,000円コース",p:5500,i:"catalog001/kokusanwagilyu/r_wagyu05_s1.jpg"},
+
+  "code-sset-003":{n:"カタログギフトBOX バウムクーヘン（S-COコース）",p:5500,s:true,i:"product/codec/sset_s1a_3800.jpg"},
+  "cat-sweets-set-001":{n:"カタログギフトBOX 焼き菓子（S-BOコース）",p:5000,s:true,i:"product/codec/catsweets-001_s1.jpg"},
+  "code-sw2set-009":{n:"カタログギフトBOX 木箱入り焼菓子（S-AEOコース）",p:15000,s:true,i:"product/codec/sw2set_s1a_15800.jpg"},
+  "code-fset-008":{n:"カタログギフトBOX 花とカタログ（S-AOOコース）",p:15000,s:true,i:"product/codec/fset_s1a_10800.jpg"},
+
+  "osechi-115":{n:"おせち2027 板前魂の花籠 三段重 約3人前",p:9780,s:true,i:"food/osechi/2026/osechi-115_s1.jpg"},
+  "osechi-118":{n:"おせち2027 板前魂の子ども用おせち 三段重 約3人前",p:12780,s:true,i:"food/osechi/2026/osechi-118_s1.jpg"},
+  "osechi-046":{n:"おせち2027 博多久松「千代」 3段重 約4〜5人前",p:26650,s:true,i:"food/osechi/2026/osechi-046_s1.jpg"},
+
+  "food-949":{n:"クリスマスケーキ ポムポムプリン 聖夜のカスタードクリームケーキ 4号",p:5400,s:true,i:"food/sweets6/food-949_s1.jpg"},
+  "food-951":{n:"クリスマスケーキ 辻利兵衛本店 宇治抹茶もんぶらんけーき 5号",p:5400,s:true,i:"food/sweets6/food-951_s1.jpg"},
+  "food-01264":{n:"クリスマスケーキ シナモロール ふわふわ雲の上のクリスマスパーティー 4号",p:5400,s:true,i:"food/sweets6/food-01264_s1.jpg"},
+  "food-943":{n:"クリスマスケーキ Galler ベルギーショコラノワール",p:4320,s:true,i:"food/sweets5/food-943_s1.jpg"},
+
+  "goods-01603":{n:"Toffy トースターミニ",p:5500,s:true,i:"0000/default/s1/goods-01603_s1.jpg"},
+  "cat-tower-003":{n:"tower が選べるカタログギフト",p:4180,f:true,i:"catalog001/webcat/cat-tower-003_s1.jpg"}
+};
+
+var RANKING = ["catalog-selection_aeo","the-003","ymj-01169","tower-043","catalog-selection_eo","food-01235","catalog-selection_aoo","ymj-01422","food-01319","food-047-b","catalog-selection_boo","goods-01794","t-fal-350","t-fal-433","osechi-119"];
+
+var RECIPES = [
+  {t:"お歳暮を7軒に",f:"親戚と、お世話になったご近所へ",g:[["the-003",4],["food-047-b",3]]},
+  {t:"内祝いをカタログで2人分",f:"選んでもらえるから、迷わない",g:[["catalog-selection_aeo",1],["catalog-selection_aoo",1]]},
+  {t:"お正月のおせちと手土産",f:"家族の集まりを、まるごと準備",g:[["osechi-119",1],["food-01235",1]]},
+  {t:"暮らしの道具を新しく",f:"年末の片づけついでに、自分へ",g:[["ymj-01169",1],["tower-043",1],["goods-01794",1]]}
+];
+
+var CATS = [
+  {id:"oseibo",en:"Winter Gift",t:"お歳暮の|スイーツ・グルメ",nav:"お歳暮ギフト",lead:"親戚にも、取引先にも。日持ちして、個包装で分けやすいものを中心に。",link:"https://www.rakuten.ne.jp/gold/patie/c/sweets/",lt:"スイーツギフト特集へ",
+   items:["the-003","food-047-b","food-01611","food-01319","ad-sweets-5293","godiva-027","food-01113","sha-038","star_b_003","sha-107","food-01603","food-01235"]},
+  {id:"catalog",en:"Catalog Gift",t:"カタログギフト",nav:"カタログギフト",lead:"コードシーのプレミアムカタログは、コース額よりお求めやすい価格。内祝いのまとめ買いにも。",link:"https://www.rakuten.ne.jp/gold/patie/c/catalog-gift-guide/",lt:"カタログギフトの選び方へ",alt:true,
+   items:["catalog-selection_eo","catalog-selection_aoo","catalog-selection_aeo","catalog-selection_boo","cat-red-001","illums_cat_002","cat-tower-sweets-002","cat_wagyu_001"]},
+  {id:"box",en:"Catalog Gift Box",t:"カタログギフトBOX",nav:"カタログBOX",lead:"カタログとお菓子や花をひと箱に。開けた瞬間に、まず一つ喜んでもらえます。",link:"https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%82%AE%E3%83%95%E3%83%88BOX/?sf=1&sid=277407",lt:"カタログギフトBOXをすべて見る",banner:"images/catalogbox_1440.jpg",
+   items:["code-sset-003","cat-sweets-set-001","code-sw2set-009","code-fset-008"]},
+  {id:"osechi",en:"Osechi 2027",t:"おせち 2027",nav:"おせち",lead:"冷凍で届いて、年末は解凍するだけ。少人数から大家族まで。",link:"https://www.rakuten.co.jp/patie/contents/event/osechi/",lt:"おせち特集へ",banner:"images/osechi27_1440.jpg",alt:true,
+   items:["osechi-115","osechi-118","osechi-119","osechi-046"]},
+  {id:"xmas",en:"Christmas Cake",t:"クリスマスケーキ 2026",nav:"クリスマスケーキ",lead:"12月23日〜25日にお届け。子どもが喜ぶキャラクターから大人の味まで。",link:"https://www.rakuten.co.jp/patie/contents/event/christmas/",lt:"クリスマス特集へ",banner:"images/xmas26_1440.jpg",
+   items:["food-949","food-951","food-01264","food-943"]},
+  {id:"tower",en:"tower & Kitchen",t:"tower・|キッチン家電",nav:"tower・家電",lead:"見た目もすっきり、毎日つかう道具たち。年末の模様替えに。",link:"https://search.rakuten.co.jp/search/mall/tower/?sid=277407",lt:"towerをすべて見る",alt:true,
+   items:["ymj-01169","tower-043","ymj-01422","cat-tower-003","t-fal-350","t-fal-433","goods-01603","goods-01794"]}
+];
+
+/* ========== helpers ========== */
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function yen(n){return n.toLocaleString("ja-JP");}
+function urlOf(code){var d=P[code];return d&&d.url?d.url:ITEM+code+"/";}
+function lotTag(d){
+  if(d.p>=GOAL) return '<span class="lt hit">この1点で抽選対象</span>';
+  var n=Math.ceil(GOAL/d.p);
+  return n<=10 ? '<span class="lt">'+n+'点で抽選対象</span>' : "";
+}
+function card(code,rank){
+  var d=P[code]; if(!d) return "";
+  var rk = rank ? '<span class="rk'+(rank<=3?" top":"")+'">'+rank+'</span>' : "";
+  var crs = d.course ? '<p class="crs">'+yen(d.course)+'円コースが</p>' : "";
+  var tags = (d.s?'<span class="ship">送料無料</span>':"")+lotTag(d);
+  return '<a class="card rv" href="'+esc(urlOf(code))+'">'+
+    '<div class="ph">'+rk+'<img src="'+esc(CAB+d.i)+'" alt="'+esc(d.n)+'" loading="lazy" width="500" height="500"></div>'+
+    '<div class="tx"><p class="nm">'+esc(d.n)+'</p>'+crs+
+    '<p class="pr">'+yen(d.p)+'<span class="yen">円</span>'+(d.f?'<span class="fr">〜</span>':"")+'</p>'+
+    (tags?'<p class="tags">'+tags+'</p>':"")+'</div></a>';
+}
+
+/* ========== render ========== */
+function renderMarquee(){
+  var w=["BLACK FRIDAY","PRESENT FOR 3","POINT ×5","code℃","GIFT SELECTION"];
+  var one=w.map(function(x){return "<span>"+esc(x)+"</span>";}).join("");
+  document.getElementById("mq").innerHTML=one+one+one+one;
+}
+function renderTimeline(){
+  var wd=["日","月","火","水","木","金","土"], h="";
+  for(var d=17; d<=25; d++){
+    var dt=new Date("2026-11-"+d+"T12:00:00+09:00"), w=dt.getDay();
+    h+='<div class="'+(w===0||w===6?"we":"")+'"><b>'+d+'</b><small>'+wd[w]+'</small></div>';
+  }
+  document.getElementById("tlDays").innerHTML=h;
+  var span=LOT_END-LOT_START+1000;
+  function setBar(id,s,e){
+    var el=document.getElementById(id).querySelector("span");
+    el.style.setProperty("--s",((s-LOT_START)/span*100)+"%");
+    el.style.setProperty("--w",((e-s)/span*100)+"%");
+  }
+  setBar("barLot",LOT_START,LOT_END);
+  setBar("barPt",PT_START,PT_END);
+  var now=new Date();
+  if(now>=LOT_START && now<=LOT_END){
+    var m=document.getElementById("now");
+    m.style.left=((now-LOT_START)/span*100)+"%"; m.style.display="block";
+  }
+}
+function renderRecipes(){
+  var h="";
+  RECIPES.forEach(function(r,i){
+    var sum=0, g="";
+    r.g.forEach(function(x){
+      var d=P[x[0]]; if(!d) return; var sub=d.p*x[1]; sum+=sub;
+      g+='<a href="'+esc(urlOf(x[0]))+'"><img src="'+esc(CAB+d.i)+'" alt="" loading="lazy" width="72" height="72"><span>'+esc(d.n)+'</span>'+
+         '<span class="q">×'+x[1]+'<small>'+yen(sub)+'円</small></span></a>';
+    });
+    var max=Math.max(sum,GOAL)*1.08;
+    h+='<article class="rc-item rv"><header><span class="no">0'+(i+1)+'</span><div><h3>'+esc(r.t)+'</h3><p class="for">'+esc(r.f)+'</p></div></header>'+
+       '<div class="rc-goods">'+g+'</div>'+
+       '<div class="rc-sum"><span>合計</span><b>'+yen(sum)+'<span class="yen">円</span></b></div>'+
+       '<div class="meter" style="--goal:'+(GOAL/max*100)+'%"><i data-w="'+(sum/max*100)+'%"></i></div>'+
+       '<div class="meter-l"><span>20,000円ライン</span><b>抽選対象</b></div></article>';
+  });
+  document.getElementById("recipes").innerHTML=h;
+}
+function renderRanking(){
+  document.getElementById("rankGrid").innerHTML=RANKING.map(function(c,i){return card(c,i+1);}).join("");
+}
+function renderCats(){
+  var nav="", sec="";
+  CATS.forEach(function(c){
+    var th=P[c.items[0]];
+    nav+='<a href="#cat-'+c.id+'"><img src="'+esc(CAB+th.i)+'" alt="" loading="lazy" width="72" height="72"><span><small>'+esc(c.en)+'</small>'+esc(c.nav||c.t)+'</span></a>';
+    var items=c.items.map(function(x){return card(x);}).join("");
+    var body = c.banner
+      ? '<div class="cat-body"><a class="cat-banner rv" href="'+esc(c.link)+'"><img src="'+esc(c.banner)+'" alt="'+esc(c.t.replace("|",""))+'" loading="lazy" width="1440" height="1440"></a><div class="grid g3">'+items+'</div></div>'
+      : '<div class="grid">'+items+'</div>';
+    sec+='<section class="sec'+(c.alt?" alt":"")+'" id="cat-'+c.id+'"><div class="wrap">'+
+      '<div class="sec-head"><p class="kicker rv">'+esc(c.en)+'</p><h2 class="h2 rv">'+esc(c.t).split("|").join("<br>")+'</h2><p class="lead rv">'+esc(c.lead)+'</p></div>'+
+      body+'<a class="more rv" href="'+esc(c.link)+'">'+esc(c.lt)+'</a></div></section>';
+  });
+  document.getElementById("cxList").innerHTML=nav;
+  document.getElementById("cats").innerHTML=sec;
+}
+
+/* ========== countdown ========== */
+function pad(n){return (n<10?"0":"")+n;}
+function tick(){
+  var now=new Date(), label, target;
+  if(now<PT_START){label="開始まで";target=PT_START;}
+  else if(now<=PT_END){label="終了まで";target=PT_END;}
+  else{document.getElementById("cdLabel").textContent="ポイント5倍は終了しました";document.getElementById("cdTime").textContent="";return;}
+  var s=Math.max(0,Math.floor((target-now)/1000));
+  var d=Math.floor(s/86400); s%=86400;
+  var hh=Math.floor(s/3600); s%=3600;
+  document.getElementById("cdLabel").textContent=label;
+  document.getElementById("cdTime").innerHTML=(d>0?d+"<i>日</i>":"")+pad(hh)+":"+pad(Math.floor(s/60))+":"+pad(s%60);
+}
+
+/* ========== eyes ========== */
+function eyes(){
+  var pupils=document.querySelectorAll(".eye i");
+  function look(x,y){
+    pupils.forEach(function(p){
+      var r=p.parentNode.getBoundingClientRect();
+      var a=Math.atan2(y-(r.top+r.height/2),x-(r.left+r.width/2));
+      p.style.transform="translate(calc(-50% + "+(Math.cos(a)*7)+"px), calc(-50% + "+(Math.sin(a)*8)+"px))";
+    });
+  }
+  window.addEventListener("pointermove",function(e){look(e.clientX,e.clientY);},{passive:true});
+}
+
+/* ========== reveal ========== */
+function reveal(){
+  var els=document.querySelectorAll(".rv, .bar, .meter i");
+  if(!("IntersectionObserver" in window)){els.forEach(on);return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){on(e.target);io.unobserve(e.target);}});
+  },{rootMargin:"0px 0px -8% 0px"});
+  els.forEach(function(el){io.observe(el);});
+  function on(el){
+    el.classList.add("in");
+    if(el.classList.contains("bar")) el.classList.add("on");
+    if(el.dataset && el.dataset.w) el.style.width=el.dataset.w;
+  }
+  setTimeout(function(){els.forEach(on);},4000); /* 保険: 動かない環境でも表示 */
+}
+
+renderMarquee(); renderTimeline(); renderRecipes(); renderRanking(); renderCats();
+tick(); setInterval(tick,1000);
+eyes(); reveal();
+})();
+</script>
+</body>
+</html>

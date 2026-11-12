@@ -121,6 +121,37 @@ a{color:inherit;text-decoration:none}
 .tl-legend p::before{content:"";width:14px;height:14px;margin-top:5px;background:var(--c);outline:1px solid rgba(251,247,238,.25)}
 .tl-legend b{display:block;font-size:17px;color:var(--paper)}
 
+/* calendar: SP mini + popup */
+.cal-title{white-space:nowrap;font-size:min(5.9vw,46px)}
+.mini{display:grid;grid-template-columns:repeat(9,1fr);gap:3px;margin-top:28px}
+.mini div{background:var(--night-2);border:1px solid var(--line-dark);padding:6px 2px 5px;text-align:center;line-height:1}
+.mini b{display:block;font-family:var(--en);font-weight:600;font-size:19px}
+.mini small{display:block;font-size:10px;margin:3px 0 5px;color:rgba(251,247,238,.7)}
+.mini .we b,.mini .we small{color:#ff8a4c}
+.mini i{display:block;height:5px;margin-top:2px;background:transparent}
+.mini i.r{background:var(--red)}.mini i.y{background:var(--yellow)}.mini i.k{background:var(--paper)}.mini i.c{background:var(--terracotta)}
+.mini .best{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.mini .best small{color:var(--ink)}
+.mini .best i.y{background:var(--ink)}
+.mini-key{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:12px;font-size:12px;font-weight:700;color:rgba(251,247,238,.85)}
+.mini-key i{width:14px;height:5px;background:var(--c);margin-right:-6px}
+.mini-open{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:20px;background:var(--yellow);color:var(--ink);border:0;font-family:var(--jp);font-weight:700;font-size:16px;letter-spacing:.08em;padding:15px 12px;cursor:pointer}
+.mini-open::after{content:"";width:14px;height:14px;background:linear-gradient(currentColor,currentColor) center/14px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 14px no-repeat}
+.mini{cursor:pointer}
+.cal-close{display:none}
+@media (max-width:859px){
+  .cal-pop{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.72);display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 12px 40px}
+  .cal-pop.open{display:block}
+  .cal-panel{background:var(--night);border:1px solid var(--line-dark);padding:18px 14px 26px;position:relative}
+  .cal-pop .rv{opacity:1;transform:none}
+  .cal-close{display:block;margin-left:auto;background:var(--paper);color:var(--ink);border:0;font-family:var(--jp);font-weight:700;font-size:14px;padding:8px 14px;cursor:pointer}
+  .cal-pop .cal-head{margin-top:10px}
+  body.lock{overflow:hidden}
+}
+@media (min-width:860px){
+  .mini,.mini-key,.mini-open{display:none}
+}
+
 /* lottery */
 .lot{background:var(--paper-deep);padding:80px 0}
 .lot .wrap{display:grid;gap:40px}
@@ -346,8 +377,14 @@ a{color:inherit;text-decoration:none}
 <section class="sch" id="schedule">
   <div class="wrap">
     <p class="kicker rv">Black Friday Calendar</p>
-    <h2 class="h2 rv">おトクが重なる<br>9日間カレンダー</h2>
+    <h2 class="h2 rv cal-title">おトクが重なる9日間カレンダー</h2>
     <p class="lead rv">めくるほどおトクが重なっていく9日間。<b>11月20日(金)</b>は4つのおトクがそろう、いちばんおトクな日です。</p>
+    <div class="mini rv" id="mini"></div>
+    <p class="mini-key"><i style="--c:var(--red)"></i>抽選<i style="--c:var(--yellow)"></i>店内5倍<i style="--c:var(--paper)"></i>BF最大10倍<i style="--c:var(--terracotta)"></i>カード4倍</p>
+    <button type="button" class="mini-open" id="calOpen" aria-controls="calPop" aria-expanded="false">日ごとのおトクを見る</button>
+    <div class="cal-pop" id="calPop" role="dialog" aria-modal="true" aria-label="おトクが重なる9日間カレンダー">
+    <div class="cal-panel">
+    <button type="button" class="cal-close" id="calClose" aria-label="閉じる">閉じる</button>
     <div class="cal-head rv"><p class="m"><small>BLACK FRIDAY</small>NOVEMBER</p><p class="y">2026</p></div>
     <div class="cal" id="cal"></div>
     <div class="tl-legend rv">
@@ -355,6 +392,8 @@ a{color:inherit;text-decoration:none}
       <p style="--c:var(--yellow)"><span><b>店内ポイント5倍</b>11月19日(木) 20:00〜11月25日(水) 1:59</span></p>
       <p style="--c:var(--ink)"><span><b>楽天ブラックフライデー 買いまわりで最大10倍</b>11月19日(木) 20:00〜11月25日(水) 1:59</span></p>
       <p style="--c:var(--terracotta)"><span><b>05の付く日は 楽天カードで4倍</b>11月20日(金)・11月25日(水) 0:00〜23:59</span></p>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -590,7 +629,7 @@ function renderMarquee(){
   document.getElementById("mq").innerHTML=one+one+one+one;
 }
 function renderTimeline(){
-  var wd=["日","月","火","水","木","金","土"], h="", now=new Date();
+  var wd=["日","月","火","水","木","金","土"], h="", mini="", now=new Date();
   var C=[
     {c:"r",sm:"THE RED",t:"抽選",s:LOT_START,e:LOT_END},
     {c:"y",sm:"店内",t:"P5倍",s:PT_START,e:PT_END},
@@ -600,7 +639,7 @@ function renderTimeline(){
   function hm(t){return t.getHours()+":"+pad(t.getMinutes());}
   for(var d=17; d<=25; d++){
     var ds=new Date("2026-11-"+d+"T00:00:00+09:00"), de=new Date("2026-11-"+d+"T23:59:59+09:00"), w=ds.getDay();
-    var chips="", n=0;
+    var chips="", n=0, ks=[];
     C.forEach(function(x){
       var note="";
       if(x.days){ if(x.days.indexOf(d)<0) return; }
@@ -609,17 +648,20 @@ function renderTimeline(){
         if(x.s>ds) note=hm(x.s)+"〜";
         else if(x.e<de && x.e.getTime()-ds.getTime()<86399000) note="〜"+hm(x.e);
       }
-      n++;
+      n++; ks.push(x.c);
       chips+='<span class="chip '+x.c+'"><small>'+esc(x.sm)+(note?" "+note:"")+'</small>'+esc(x.t)+'</span>';
     });
     var cls="day rv"+(w===0||w===6?" we":"")+(d===BEST_DAY?" best":"");
     if(now>=ds && now<=de) cls+=" today";
     else if(now>de) cls+=" past";
+    mini+='<div class="'+(w===0||w===6?"we ":"")+(d===BEST_DAY?"best":"")+'"><b>'+d+'</b><small>'+wd[w]+'</small>'+
+      ["r","y","k","c"].map(function(c){return '<i class="'+(ks.indexOf(c)>=0?c:"")+'"></i>';}).join("")+'</div>';
     h+='<div class="'+cls+'">'+(d===BEST_DAY?'<span class="flag">いちばんおトク</span>':"")+(now>=ds&&now<=de?'<span class="now">TODAY</span>':"")+
        '<div class="dh"><span class="dn">'+d+'</span><span class="wd">'+wd[w]+'</span></div>'+
        '<div class="chips">'+chips+'</div><p class="cnt">おトク<b>'+n+'</b>つ</p></div>';
   }
   document.getElementById("cal").innerHTML=h;
+  document.getElementById("mini").innerHTML=mini;
 }
 function renderRecipes(){
   var h="";
@@ -702,7 +744,17 @@ function reveal(){
   setTimeout(function(){els.forEach(on);},4000); /* 保険: 動かない環境でも表示 */
 }
 
-renderMarquee(); renderTimeline(); renderRecipes(); renderRanking(); renderCats();
+function calPopup(){
+  var pop=document.getElementById("calPop"), btn=document.getElementById("calOpen");
+  function open(){pop.classList.add("open");document.body.classList.add("lock");btn.setAttribute("aria-expanded","true");document.getElementById("calClose").focus();}
+  function close(){pop.classList.remove("open");document.body.classList.remove("lock");btn.setAttribute("aria-expanded","false");btn.focus();}
+  btn.addEventListener("click",open);
+  document.getElementById("mini").addEventListener("click",open);
+  document.getElementById("calClose").addEventListener("click",close);
+  pop.addEventListener("click",function(e){if(e.target===pop)close();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&pop.classList.contains("open"))close();});
+}
+renderMarquee(); renderTimeline(); calPopup(); renderRecipes(); renderRanking(); renderCats();
 tick(); setInterval(tick,1000);
 eyes(); reveal();
 })();
